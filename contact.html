@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+<section class="contact-hero">
+    <nav>
+        <header class="site-header">
+<img src="images/logo.png" alt="Horseed Logo" class="logo">
+</header>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-xmark" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  <h1>Contact Us</h1>
+    <p> We are committed to delivering reliable electrical, bookshop, and cyber services that support our community with quality, professionalism, and care.
+  </p>
+</section>
+<section class="contact-section">
+
+  <div class="row">
+
+    <!-- Contact Form -->
+    <div class="col">
+      <h2>Send Us a Message</h2>
+
+      <form id="contact-form" action="https://formspree.io/f/xgongwbl" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <input type="hidden" name="_subject" value="New Message from Website">
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="form-response"></div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="col">
+      <h2>Contact Information</h2>
+
+      <p><i class="fas fa-phone-alt"></i><strong>Phone:</strong> +254 729 581 517</p>
+      <p><i class="fas fa-envelope"></i><strong>Email:</strong> horseedelectric@gmail.com</p>
+      <p><a href="https://maps.app.goo.gl/x3Ew2PRskm3131BDA" target="_blank"><i class="fas fa-map-marker-alt"></i><strong>Location:</strong> Opposite Taleh Gas Station</a></p>
+
+      <p>
+        Visit our shop or contact us online for fast and reliable service.
+        We are always ready to assist you with your needs.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<!---- Footer---->
+<footer class="footer">
+    <!-- About -->
+    <div class="footer-col">
+      <h3>About Us</h3>
+      <p>Our company is committed to providing reliable electrical services along with quality bookshop and cyber solutions to support the needs of our community.<br>With a focus on professionalism, safety, and customer satisfaction, we strive to deliver dependable services that make everyday work, learning, and business activities easier for our clients.
+      </p>
+    </div>
+  <div class="footer-container">
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="services.html">Electrical Services</a></li>
+        <li><a href="services.html">Bookshop Services</a></li>
+        <li><a href="services.html">Cyber Services</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>Email: horseedelectric@gmail.com</p>
+      <p>Phone: +254 729 581 517</p>
+      <p>Location: Opposite Taleh Gas Station</p>
+    </div>
+
+  </div>
+<div class="icons">
+  <a href="https://www.facebook.com/profile.php?id=100063761835682" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+  <a href="https://www.twitter.com/YourPage" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+  <a href="https://wa.me/0729581517" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="https://www.instagram.com/YourPage" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@YourPage" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    
+    </div>
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>&copy; 2026 HORSEED ELECTRICALS. All Rights Reserved.</p>
+  </div>
+
+</footer>
+    
+<!----Javascript for Toggle Menu---->
+<script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+</script>
+    
+<script>
+const form = document.getElementById("contact-form");
+const response = document.getElementById("form-response");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault();
+
+  response.innerHTML = "Sending message...";
+
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(res => {
+    if (res.ok) {
+      response.innerHTML = "✅ Message sent successfully!";
+      form.reset();
+    } else {
+      response.innerHTML = "❌ Failed to send message.";
+    }
+  })
+  .catch(() => {
+    response.innerHTML = "⚠️ Error sending message.";
+  });
+});
+</script>   
+</body>
+</html>
