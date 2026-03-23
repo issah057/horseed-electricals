@@ -244,9 +244,15 @@ h3{
 .row.reverse{
   flex-direction: row-reverse;
 }
+.values-col{
+    flex-basis: 50%;
+    box-sizing: border-box;
+}
 .values-col img{
     width: 100%;
+    max-width: 100%;
     height: auto;
+    display: block;
     border-radius: 10px;
 }
 .values-col h2{
@@ -515,7 +521,9 @@ button:hover{
   font-weight: 500;
   color: #2f80ed;
 }
-
+html, body{
+  overflow-x: hidden;
+}
 
 
 
