@@ -95,7 +95,7 @@ nav .fa{
         font-size: 24px;
     }
     .text-box p{
-        font-size: 16px;
+        font-size: 14px;
     }
     .nav-links ul li{
         display: block;
@@ -174,6 +174,9 @@ h3{
     .electrical-col{
         flex-basis: 100%;
         width: 100%;
+    }
+    p{
+        font-size: 14px;
     }
 }
 /*---- services----*/
@@ -302,6 +305,9 @@ h3{
     .row.reverse{
         flex-direction: column;
       }
+    .values-col p{
+        font-size: 14px;
+    }
 }
 /*-------- Other Services --------*/
 .other{
@@ -346,10 +352,16 @@ h3{
     margin-top: 10px
 }
 @media (max-width: 700px){
+    .other p{
+        font-size: 14px;
+    }
     .oth-row{
         flex-direction: column;
         text-align: center;
         gap: 20px;
+    }
+    .other-col p{
+        font-size: 14px;
     }
     .block{
         padding: 40px 20px;
