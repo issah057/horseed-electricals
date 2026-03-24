@@ -4,7 +4,7 @@
 }
 .header{
     min-height: 100vh;
-    width: 100;
+    width: 100%;
     background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/back3.jpg);
     background-position: center;
     background-size: cover;
@@ -40,7 +40,7 @@ nav{
 .nav-links ul li a{
     color: white;
     text-decoration: none;
-    font-size: 13
+    font-size: 13px;
 }
 .nav-links ul li::after{
     content: '';
@@ -92,13 +92,16 @@ nav .fa{
 }
 @media(max-width: 700px){
     .text-box h1{
-        font-size: 13px;
+        font-size: 24px;
+    }
+    .text-box p{
+        font-size: 16px;
     }
     .nav-links ul li{
         display: block;
     }
     .nav-links{
-        position: absolute;
+        position: fixed;
         background:#0d3b66;
         height: 100vh;
         width: 200px;
@@ -133,16 +136,16 @@ h1{
 }
 p{
     color: #777;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 22px;
     padding: 10px;
 }
-.row{
+.electric-row{
     margin-top: 5%;
     display: flex;
     justify-content: space-between;
-        
+    flex-wrap: wrap;   
 }
 .electrical-col{
     flex-basis: 31%;
@@ -152,6 +155,7 @@ p{
     padding: 20px 12px;
     box-sizing: border-box;
     transition: 0.5s;
+   
 }
 h3{
     text-align: center;
@@ -162,8 +166,9 @@ h3{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
 }
 @media(max-width: 700px){
-    .row{
+    .electric-row{
         flex-direction: column;
+        text-align: center;
         gap: 20px;
     }
     .electrical-col{
@@ -181,6 +186,12 @@ h3{
 .services h1{
     color: white;
     text-align: center;
+}
+.serv-row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .services-col{
     flex-basis: 32%;
@@ -222,6 +233,16 @@ h3{
     bottom: 49%;
     opacity: 1;
 }
+@media (max-width: 700px){
+    .serv-row{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .block{
+        padding: 40px 20px;
+    }
+}
 /*---- values----*/
 .values{
   padding: 20px 0;
@@ -236,7 +257,7 @@ h3{
 .mission-block{
   background: #d4f5d0;
 }
-.row {
+.val-row{
   display: flex;
   align-items: center;
   gap: 40px;
@@ -246,6 +267,7 @@ h3{
 }
 .values-col{
     flex-basis: 50%;
+    width: 100%;
     box-sizing: border-box;
 }
 .values-col img{
@@ -265,18 +287,21 @@ h3{
   font-size: 16px;
 }
 @media (max-width: 700px){
-.row{
-    flex-direction: column;
-    text-align: center;
-}
-.values col{
-    flex-basis: 100%;
-    width: 100%;
- }
-.row.reverse{
-    flex-direction: column;
-  }
-
+    .block{
+        padding: 40px 20px;
+    }
+    .val-row{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .values-col{
+        flex-basis: 100%;
+        width: 100%;
+     }
+    .row.reverse{
+        flex-direction: column;
+      }
 }
 /*-------- Other Services --------*/
 .other{
@@ -294,11 +319,19 @@ h3{
 .other-block{
     background:#0d3b66;
 }
+.oth-row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
 .other-col{
     flex-basis: 50%;
     border-radius: 10px;
     margin-bottom: 5px;
     text-align: left;
+    flex: 1 1 300px;
 }
 .other-col img{
     width: 100%;
@@ -312,7 +345,16 @@ h3{
     padding: 0;
     margin-top: 10px
 }
-
+@media (max-width: 700px){
+    .oth-row{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .block{
+        padding: 40px 20px;
+    }
+}
 /*---- Contact----*/
 .call{
     margin: 100px auto;
@@ -329,7 +371,7 @@ h3{
     margin-bottom: 40px;
     padding: 0;
 }
-@media(media-width: 700px){
+@media(max-width: 700px){
     .call h1{
         font-size: 24px;
     }
@@ -433,12 +475,12 @@ h3{
   text-align:center;
   margin-bottom:40px;
 }
-.service-hero .row{
+.service-row{
   display:flex;
   gap:30px;
   flex-wrap:wrap;
 }
-.service-hero .col{
+.service-col{
   flex:1;
   min-width:250px;
 }
@@ -446,7 +488,7 @@ h3{
   background:#f4f6f8;
 }
 @media (max-width:700px){
-  .row{
+  .service-row{
     flex-direction:column;
     text-align:center;
   }
@@ -480,12 +522,12 @@ h3{
 .contact-section{
   padding:60px 10%;
 }
-.contact-section .row{
+.contact-row{
   display:flex;
   gap:40px;
   flex-wrap:wrap;
 }
-.contact-section .col{
+.contact-col{
   flex:1;
   min-width:250px;
 }
@@ -512,7 +554,7 @@ button:hover{
   background:#1c60c7;
 }
 @media (max-width:700px){
-  .row{
+  .contact-section .row{
     flex-direction:column;
   }
 }
@@ -522,11 +564,8 @@ button:hover{
   color: #2f80ed;
 }
 html, body{
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
-
-
-
 
 
 
